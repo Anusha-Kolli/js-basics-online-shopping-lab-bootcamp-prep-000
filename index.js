@@ -22,17 +22,31 @@ function addToCart(item) {
 
 function viewCart() {
 
-  if (cart.length === 0) {
-    console.log("Your shopping cart is empty.")
-  } else {
-   var items = [];
-    for (var i = 0; i < cart.length; i++) {
-      for (var item in cart[i]) {
-        items.push(item + " at $" + cart[i][item])
+  if (cart.length == 0) console.log("Your shopping cart is empty.");
+   else {
+     var sentence = 'In your cart, you have ';
+     for (var i = 0; i < cart.length; i++) {
+       var obj = cart[i];
+       var item = Object.keys(obj)[0]
+       var price = Object.values(obj)[0]
+      if (cart.length == 1) {
+         sentence += `${item} at $${price}.`
+       } else if (cart.length == 2) {
+         if (i == cart.length - 1) {
+           sentence += `and ${item} at $${price}.`
+         } else {
+           sentence += `${item} at $${price} `
+         }
+       } else if (cart.length > 2) {
+         if (i == cart.length - 1) {
+           sentence += `and ${item} at $${price}.`
+         } else {
+           sentence += `${item} at $${price}, `
+         }
       }
- }
-    console.log("In your cart, you have " + items.join(" , ") + ".");
- }
+     }
+     console.log(sentence)
+  }
   // write your code here
 }
 
