@@ -53,12 +53,12 @@ function viewCart() {
 function total() {
 
   let sum = 0;
-+  for (let i = 0; i < cart.length; i++) {
-+    var obj = cart[i];
-+    var price = Object.values(obj)[0]
-+    sum += price;
-+  }
-+  return sum;
+  for (let i = 0; i < cart.length; i++) {
+   var obj = cart[i];
+    var price = Object.values(obj)[0]
+    sum += price;
+  }
+  return sum;
   // write your code here
 }
 
