@@ -15,7 +15,7 @@ function addToCart(item) {
   item_object[item] = price
   cart.push(item_object)
   console.log(item + " has been added to your cart.");
- return cart
+ return cart;
 }
 
 
